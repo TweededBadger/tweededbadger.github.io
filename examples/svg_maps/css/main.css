@@ -1,0 +1,72 @@
+svg {
+    max-height: 300px;
+}
+path {
+    -webkit-transition: stroke-width 0.5s, fill .5s;
+    -o-transition: stroke-width 0.5s, fill .5s;
+    transition: stroke-width 0.5s, fill .5s;
+    stroke-width: 2;
+    stroke: #000000;
+}
+path:hover , path.hover {
+    stroke: #000000;
+    z-index: 999;
+    stroke-width: 10;
+    cursor: pointer;
+}
+.scale {
+    position: relative;
+}
+.scale div {
+    width: 9.07%;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.tableScroll {
+    overflow-y: scroll;
+    max-height: 300px;
+}
+.regionlist {
+    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+}
+.regionlist > div {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid grey;
+
+    -webkit-transition: background-color 0.5s , font-weight 0.5s;
+    -o-transition: background-color 0.5s , font-weight 0.5s;
+    transition: background-color 0.5s , font-weight 0.5s;
+
+}
+.regionlist > div.active {
+    font-weight: bold;
+    background-color: lightblue;
+}
+
+.regionlist > div > div {
+    display: inline-block;
+    width: 48%;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background-color: #ececec;
+    /*border: 1px solid ;*/
+    padding: 8px;
+}
+.logo:hover {
+    background-color: #fa884b;
+}
+.logo img {
+    width: 40px;
+}
