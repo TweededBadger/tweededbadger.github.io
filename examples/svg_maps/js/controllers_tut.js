@@ -13,10 +13,7 @@ angular.module('SvgMapApp', [])
         };
         $scope.createDummyData();
 
-
         $scope.changeHoverRegion = function (region) {
-            console.log(region);
             $scope.hoverRegion = region;
         };
-
     }]);
