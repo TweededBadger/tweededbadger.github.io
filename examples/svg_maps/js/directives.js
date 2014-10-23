@@ -3,38 +3,38 @@ angular.module('SvgMapApp').directive('svgMap', ['$compile', function ($compile)
         restrict: 'A',
         templateUrl: 'img/Blank_US_Map.svg',
         link: function (scope, element, attrs) {
-            var paths = element.find('path');
-            angular.forEach(paths, function (path, key) {
-                var pathElement = angular.element(path);
-                pathElement.attr("region", "");
-                pathElement.attr("dummy-data", "dummyData");
-                pathElement.attr("hover-region", "hoverRegion");
-                $compile(pathElement)(scope);
+            var regions = element[0].querySelectorAll('.state');
+            angular.forEach(regions, function (path, key) {
+                var regionElement = angular.element(path);
+                regionElement.attr("region", "");
+                regionElement.attr("dummy-data", "dummyData");
+                regionElement.attr("hover-region", "hoverRegion");
+                $compile(regionElement)(scope);
             })
         }
     }
 }]);
+
 angular.module('SvgMapApp').directive('region', ['$compile', function ($compile) {
     return {
-        restrict: 'EA',
+        restrict: 'A',
         scope: {
             dummyData: "=",
             hoverRegion: "="
         },
         link: function (scope, element, attrs) {
             scope.elementId = element.attr("id");
-            scope.regionMouseDown = function () {
-                console.log(scope.elementId);
-                console.log(scope.dummyData[scope.elementId]);
+            scope.regionClick = function () {
+                alert(scope.dummyData[scope.elementId].value);
             };
             scope.regionMouseOver = function () {
-                console.log(scope.elementId);
                 scope.hoverRegion = scope.elementId;
+                element[0].parentNode.appendChild(element[0]);
             };
+            element.attr("ng-click", "regionClick()");
             element.attr("ng-attr-fill", "{{dummyData[elementId].value | map_colour}}");
-            element.attr("ng-click", "regionMouseDown()");
             element.attr("ng-mouseover", "regionMouseOver()");
-            element.attr("ng-class", "{hover:hoverRegion==elementId}");
+            element.attr("ng-class", "{active:hoverRegion==elementId}");
             element.removeAttr("region");
             $compile(element)(scope);
         }

@@ -1,19 +1,20 @@
 svg {
     max-height: 300px;
 }
-path {
-    -webkit-transition: stroke-width 0.5s, fill .5s;
-    -o-transition: stroke-width 0.5s, fill .5s;
-    transition: stroke-width 0.5s, fill .5s;
+svg .state {
     stroke-width: 2;
-    stroke: #000000;
+    stroke: #fff;
+
+    -webkit-transition: stroke 0.5s, stroke-width 0.5s;
+    -o-transition: stroke 0.5s, stroke-width 0.5s;
+    transition: stroke 0.5s, stroke-width 0.5s;
 }
-path:hover , path.hover {
-    stroke: #000000;
-    z-index: 999;
-    stroke-width: 10;
+svg .state:hover , .state.active {
     cursor: pointer;
+    stroke-width: 4;
+    stroke: #000;
 }
+
 .scale {
     position: relative;
 }
@@ -54,6 +55,8 @@ path:hover , path.hover {
     display: inline-block;
     width: 48%;
 }
+
+
 
 .logo {
     position: absolute;

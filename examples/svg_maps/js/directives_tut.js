@@ -29,6 +29,7 @@ angular.module('SvgMapApp').directive('region', ['$compile', function ($compile)
             };
             scope.regionMouseOver = function () {
                 scope.hoverRegion = scope.elementId;
+                element[0].parentNode.appendChild(element[0]);
             };
             element.attr("ng-click", "regionClick()");
             element.attr("ng-attr-fill", "{{dummyData[elementId].value | map_colour}}");

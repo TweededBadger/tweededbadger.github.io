@@ -1,16 +1,15 @@
 svg path {
-    stroke-width: 1;
+    stroke-width: 2;
     stroke: #fff;
-    /*fill: #ccc;*/
-    opacity: 0.7;
 
-    -webkit-transition: opacity 0.5s;
-    -o-transition: opacity 0.5s;
-    transition: opacity 0.5s;
+    -webkit-transition: stroke 0.5s, stroke-width 0.5s;
+    -o-transition: stroke 0.5s, stroke-width 0.5s;
+    transition: stroke 0.5s, stroke-width 0.5s;
 }
 svg path:hover , path.active {
     cursor: pointer;
-    opacity: 1;
+    stroke-width: 4;
+    stroke: #000;
 }
 
 .regionlist {
