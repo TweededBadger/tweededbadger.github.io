@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flavour Aside Test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .sections {
+            height: 100%;
+            width: 250%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .sections div {
+            height: 100%;
+            /*width: 10%;*/
+            width: 8.888%;
+            float: left;
+            transition: width 0.5s;
+            background-size:  auto 100%;
+            background-position: center;
+            border-right: 2px solid #ffffff;
+        }
+        .sections div.active {
+            width: 20%;
+        }
+        .inactive {
+            width: 8.888%;
+        }
+
+        .sections div:nth-child(2n) {
+            /*background-color: red;*/
+            background-image: url("img/testpic1.JPG");
+        }
+        .sections div:nth-child(2n+1) {
+            /*background-color: blue*/
+        background-image: url("img/testpic2.JPG");
+            background-size: auto 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="sections">
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    var currentX = 0;
+    var $sections = $(".sections");
+    var $window = $(window);
+    var currentSection = $($(".sections div")[0]);
+    window.setInterval(function() {
+       var fullWidth = $sections.width();
+        var pagewidth = $window.width();
+       var offset = (currentX/pagewidth) * (fullWidth-pagewidth) * -1;
+        var currentPos = $sections[0].getBoundingClientRect().left;
+
+        var diff = offset-currentPos;
+        //console.log($sections[0].getBoundingClientRect().left);
+        var newpos = currentPos + (diff*0.3);
+        $sections.css("left",newpos);
+//        console.log(pagewidth);
+    },1000/24);
+
+    $(document).mousemove(function(event) {
+//        captureMousePosition(event);
+//        console.log(event.pageX);
+        currentX = event.pageX;
+    });
+
+    $(".sections div").bind("mouseover", function(e) {
+        currentSection.removeClass("active");
+        console.log(e);
+        console.log(this);
+        $(this).addClass("active");
+        currentSection = $(this);
+    });
+
+
+</script>
+</body>
+</html>
