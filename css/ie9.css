@@ -1,0 +1,9 @@
+.about .base.badgerhide {
+  display: none;
+}
+.about .sections .section .fixed {
+  display: none;
+}
+.about .sections .section .fixed.active {
+  display: block;
+}

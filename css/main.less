@@ -1,0 +1,72 @@
+@import "../less/variables";
+@import "../less/mixins";
+@import "nav";
+@import "blogtease";
+@import "fonts";
+@import "intro";
+@import "about";
+@import "tools";
+
+html,body {
+  height: 100%;
+
+  font-family: 'Oxygen', sans-serif;
+//  padding-top: 20px;
+  font-weight: 100;
+  font-size: 16px;
+}
+h1,h2,h3,h4 {
+  font-family: 'Arvo', serif;
+//  color: rgb(250, 135, 74);;
+}
+h2:nth-of-type(5n + 0) {
+  color: @lightblue;
+}
+h2:nth-of-type(5n + 1) {
+  color: @orange;
+}
+h2:nth-of-type(5n + 2) {
+  color: @green;
+}
+h2:nth-of-type(5n + 3) {
+  color: @purple;
+}
+h2:nth-of-type(5n + 4) {
+  color: @yellow;
+}
+body {
+//  padding-top: 50px;
+//  color: #44434d;
+  color: #000000;
+//  background-color: rgb(250, 135, 74);
+}
+a {
+  color: #000000;
+}
+
+#size_debug {
+  background-color: white;
+  color: #000000;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  &:after
+  {
+    content: "XS";
+    @media (min-width: @screen-xs) {
+      content: "SM";
+    }
+    @media (min-width: @screen-sm) {
+      content: "MD";
+    }
+    @media (min-width: @screen-md) {
+      content: "LG";
+    }
+    @media (min-width: @screen-lg) {
+      content: "XL";
+    }
+  }
+}

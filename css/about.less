@@ -1,0 +1,274 @@
+@badger-portrait-height: 40%;
+@badger-landscape-width:45%;
+
+.about {
+  //  @media (min-width: @screen-md) {
+  height: 100%;
+  //  }
+
+  a {
+    &:hover, &:focus {
+      color: #000000;
+    }
+    font-weight: bold;
+  }
+  .base {
+    position: fixed;
+    z-index: 0;
+    //    border: 1px solid red;
+    width: 100%;
+    height: @badger-portrait-height;
+    @media (orientation: landscape) {
+      height: 100%;
+      width: @badger-landscape-width;
+    }
+    .translate3d(0,0,0);
+      .transition(-webkit-transform 1s);
+      .transition(transform 1s);
+
+    &.badgerhide{
+      .translate3d(-100%,0,0);
+      .transition(-webkit-transform 1s);
+      .transition(transform 1s);
+    }
+    .vertical-center {
+      width: 100%;
+      height: 100%;
+      @media (orientation: landscape) {
+//        width: @badger-landscape-width;
+        width: 100%;
+
+            height: auto;
+      }
+      text-align: center;
+      img {
+        //        max-width: 60%;
+        max-height: 100%;
+        @media (orientation: landscape) {
+          width: 80%;
+          //          left: 10%;
+          position: relative;
+          max-width: 600px;
+        }
+      }
+    }
+  }
+  .sections {
+    height: 100%;
+//    overflow-x: hidden;
+    .section {
+      overflow: hidden;
+      height: 103%;
+      padding-top: @badger-portrait-height;
+      @media (orientation: landscape) {
+        padding-top: 0;
+      }
+      &.tools {
+        padding-top: 0;
+      }
+      .maincopy {
+        padding: 5%;
+        @media (orientation: landscape) {
+          width: 100%-@badger-landscape-width;
+          left: @badger-landscape-width;
+          padding: 0;
+          padding-right: 4%;
+//          margin-left: 50%;
+          //        top: -5%;
+          position: relative;
+        }
+
+        h1 {
+          font-size: 2em;
+          @media (min-width: @screen-xs) {
+            font-size: 2.1em;
+          }
+          @media (min-width: @screen-sm) {
+            font-size: 2.2em;
+          }
+          @media (min-width: @screen-md) {
+            font-size: 2.3em;
+          }
+          @media (min-width: @screen-lg) {
+            font-size: 2.5em;
+          }
+        }
+        p {
+          font-size: 1.0em;
+          font-family: 'Arvo', serif;
+          @media (orientation: landscape) {
+            font-size: 1.1em;
+          }
+
+          @media (min-width: @screen-xs) {
+            font-size: 1.3em;
+            @media (orientation: landscape) {
+              font-size: 1.2em;
+            }
+          }
+          @media (min-width: @screen-sm) {
+            font-size: 1.4em;
+          }
+          @media (min-width: @screen-md) {
+            font-size: 1.5em;
+          }
+          @media (min-width: @screen-lg) {
+            font-size: 1.5em;
+          }
+        }
+      }
+      .fixed {
+        position: fixed;
+//        top: -100%;
+        top: 0;
+        .translate3d(0,-100%,0);
+          .transition(-webkit-transform 1s);
+          .transition(transform 1s);
+        left: 0;
+        height: @badger-portrait-height;
+        width: 100%;
+        @media (orientation: landscape) {
+          height: 100%;
+          width: @badger-landscape-width;
+        }
+//        .transition(top 0.5s);
+        //        display: none;
+        &.active {
+          //          display: block;
+//          top: 0%;
+//          .transition(top 1s);
+
+          .translate3d(0,0,0);
+          .transition(-webkit-transform 1s);
+          .transition(transform 1s);
+
+        }
+        & > div {
+          width: 100%;
+          text-align: center;
+          height: 100%;
+          @media (orientation: landscape) {
+//            width: @badger-landscape-width;
+            width: 100%;
+            height: auto;
+
+          }
+        }
+        img {
+          //          max-width: 60%;
+          max-height: 100%;
+          @media (orientation: landscape) {
+            width: 80%;
+            //            left: 10%;
+            position: relative;
+            max-width: 600px;
+          }
+
+        }
+      }
+      //      &:after {
+      //        content: attr(data-debug);
+      //      }
+      &:nth-of-type(1) {
+        height: 100%;
+      }
+    }
+    .section1 {
+      background-color: rgb(56, 195, 198);
+    }
+    .section2 {
+      background-color: rgb(250, 135, 74);
+    }
+    .section3 {
+      background-color: rgb(171, 226, 85);
+    }
+    .section4 {
+      background-color: rgb(120, 85, 192);
+    }
+    .section5 {
+      background-color: rgb(255, 195, 34);
+    }
+  }
+  .controls {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    @media (min-width: @screen-xs) {
+      font-size: 35px;
+    }
+    @media (min-width: @screen-sm) {
+      font-size: 40px;
+    }
+    @media (min-width: @screen-md) {
+      font-size: 45px;
+    }
+    @media (min-width: @screen-lg) {
+      font-size: 50px;
+    }
+    a {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+      i {
+        .transition(-webkit-transform 1s);
+          .transition(transform 1s);
+      }
+    }
+
+    &.rotate {
+      a {
+        i {
+          .rotateZ(180deg);
+          .transition(-webkit-transform 1s);
+          .transition(transform 1s);
+        }
+      }
+    }
+  }
+  .links {
+    position: fixed;
+    top: 0;
+    right: 0.2em;
+    font-size: 25px;
+    @media (min-width: @screen-xs) {
+      font-size: 25px;
+    }
+    @media (min-width: @screen-sm) {
+      font-size: 30px;
+    }
+    @media (min-width: @screen-md) {
+      font-size: 35px;
+    }
+    @media (min-width: @screen-lg) {
+      font-size: 40px;
+    }
+    a {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.vertical-center-outer:after {
+  //    @media (min-width: @screen-md) {
+  content: '';
+  height: 100%;
+  margin-left: -0.25em; /* To offset spacing. May vary by font */
+  display: inline-block;
+  vertical-align: middle;
+  //      }
+}
+
+.vertical-center {
+  //  @media (min-width: @screen-md) {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 98.8%;
+  //  }
+}

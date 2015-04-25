@@ -1,0 +1,40 @@
+.intro {
+//  border: 3px solid darkolivegreen;
+  margin: 1em;
+  border-radius: 10px;
+  img {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    @media (min-width: @screen-xs) {
+      display: inline-block;
+      float: left;
+      width: 49%;
+    }
+  }
+  .copy {
+    text-align: center;
+    @media (min-width: @screen-xs) {
+      display: inline-block;
+      width: 49%;
+      float: right;
+//      &:nth-of-type(2) {
+//        width: 100%;
+//      }
+    }
+    @media (min-width: @screen-sm) {
+      &:nth-of-type(2) {
+        width: 49%;
+      }
+    }
+    h1,h2,a {
+      margin-top: 0;
+    }
+
+
+
+
+
+  }
+}
+

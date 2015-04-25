@@ -1,0 +1,13 @@
+.intro {
+  border: 3px solid darkolivegreen;
+  margin: 1em;
+  border-radius: 10px;
+}
+.intro img {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+.intro .copy {
+  text-align: center;
+}

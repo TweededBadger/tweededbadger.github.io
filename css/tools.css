@@ -1,0 +1,13 @@
+.tools .tool {
+  width: 30%;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  display: inline-block;
+  border: 1px solid #808080;
+  padding: 10px;
+  height: 300px;
+  float: left;
+}
+.tools .tool h2 {
+  text-align: center;
+}

@@ -1,0 +1,114 @@
+@import "fonts";
+
+.work {
+  width: 100%;
+  height: 100%;
+  .workitem {
+    width: 100%;
+    height: 100%;
+//    margin-bottom: 100px;
+
+  &.bbc {
+    .details {
+      font-size: 15px ;
+    }
+  }
+
+    .details,
+    .image {
+      width: 50%;
+      height: 50%;
+      display: inline-block;
+      float: left;
+      position: relative;
+    }
+    .details {
+
+      padding: 20px;
+      color: #ffffff;
+      font-family: 'Arvo', serif;
+      font-size: 17px;
+      line-height: 21px;
+
+      &.one {
+        background-color: @lightblue;
+      }
+      &.two {
+        background-color: @green;
+      }
+      &.three {
+        background-color: @purple;
+      }
+      &.four {
+        background-color: @orange;
+      }
+      &.five {
+        background-color: @yellow;
+      }
+      &.six {
+        background-color: @lightblue;
+      }
+      h2 {
+        font-size: 24px;
+        span {
+        }
+      }
+      h1,h2,h3 {
+        color: white;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .tech {
+        font-size: 14px;
+//        position: absolute;
+//        top: 0;
+//        right: 5px;
+        border-bottom: 1px solid #ffffff;
+        padding-bottom: 5px;
+      }
+      a {
+        color: #ffffff;
+        font-weight: bold;
+      }
+    }
+    .image {
+      overflow: hidden;
+      text-align:center;
+      img {
+        width: 101%;
+        margin:-100%;
+      }
+      &.fill {
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      &.black {
+        background-color: #000000;
+      }
+    }
+
+    .vertical-center-outer:after {
+      margin-left: 0;
+    }
+
+    &.willintro {
+      h1 {
+        font-size: 36px;
+      }
+      h1,h2 {
+        border: none;
+        margin: 0;
+      }
+      .image {
+        img {
+//          max-height: 80%;
+//          width: auto;
+          width: 70%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
